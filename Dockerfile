@@ -25,8 +25,18 @@ CMD ["sudo", "/usr/sbin/sshd", "-D"]
 
 # browser: firefox, chromium
 RUN sudo apt-get install -y --no-install-recommends \
-        firefox \
+        firefox 
         #chromium-browser \
         #chromium-codecs-ffmpeg \
         #chromium-codecs-ffmpeg-extra \
         #flashplugin-installer
+
+# install snap
+RUN sudo apt-get install -y --no-install-recommends \ 
+        snapd \
+        squashfuse \
+        fuse
+RUN systemctl enable snapd
+STOPSIGNAL SIGRTMIN+3
+CMD [ "/sbin/init" ]
+
