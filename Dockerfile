@@ -11,7 +11,7 @@ RUN sudo apt-get update
 # ssh server
 RUN sudo apt-get install -y --no-install-recommends openssh-server
 RUN sudo mkdir /var/run/sshd
-RUN sudo echo 'root:screencast' | chpasswd
+#RUN sudo echo 'root:screencast' | chpasswd
 RUN sudo sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login
