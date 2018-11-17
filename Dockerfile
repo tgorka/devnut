@@ -8,6 +8,10 @@ ENV DISPLAY host.docker.internal:0.0
 # update package list
 RUN sudo apt-get update
 
+# install vim
+RUN sudo apt-get install -y --no-install-recommends \
+        vim
+
 # ssh server
 RUN sudo apt-get install -y --no-install-recommends openssh-server
 RUN sudo mkdir /var/run/sshd
