@@ -48,5 +48,5 @@ CMD [ "/sbin/init" ]
 RUN set -x && VER="2018.2.6" \
         && sudo curl -sL -o /tmp/ideaIU-$VER-no-jdk.tar.gz https://download.jetbrains.com/idea/ideaIU-$VER-no-jdk.tar.gz \
         && sudo tar -xz -C /opt -f /tmp/ideaIU-$VER-no-jdk.tar.gz \
-        && rm -rf /tmp/ideaIU-$VER-no-jdk.tar.gz 
+        && sudo rm -rf /tmp/ideaIU-$VER-no-jdk.tar.gz 
 RUN echo 'alias idea=/opt/idea-IU-182.5107.16/bin/idea.sh' >> /etc/profile
