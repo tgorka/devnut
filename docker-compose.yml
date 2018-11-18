@@ -4,3 +4,7 @@ services:
     image: "tgorka/devnut"
     ports:
      - "5000:80"
+    volume:
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - .:/home/nut
+     
