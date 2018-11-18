@@ -36,13 +36,13 @@ RUN sudo apt-get install -y --no-install-recommends \
         #flashplugin-installer
 
 # install snap
-RUN sudo apt-get install -y --no-install-recommends \ 
-        snapd \
-        squashfuse \
-        fuse
-RUN systemctl enable snapd
-STOPSIGNAL SIGRTMIN+3
-CMD [ "/sbin/init" ]
+#RUN sudo apt-get install -y --no-install-recommends \ 
+#        snapd \
+#        squashfuse \
+#        fuse
+#RUN systemctl enable snapd
+#STOPSIGNAL SIGRTMIN+3
+#CMD [ "/sbin/init" ]
 
 # install inteliJ IDEA ultimate
 RUN set -x && VER="2018.2.6" && REL="182.5107.16" \
