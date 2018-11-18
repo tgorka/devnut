@@ -50,4 +50,4 @@ RUN set -x && VER="2018.2.6" \
         && sudo tar -xz -C /opt -f /tmp/ideaIU-$VER-no-jdk.tar.gz \
         && sudo rm -rf /tmp/ideaIU-$VER-no-jdk.tar.gz \
         && unset VER
-RUN echo 'alias idea=/opt/idea-IU-182.5107.16/bin/idea.sh' >> /etc/profile
+RUN echo 'alias idea="/opt/idea-IU-182.5107.16/bin/idea.sh"' | sudo tee /etc/profile.d/alias_idea.sh
