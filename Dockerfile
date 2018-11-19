@@ -48,6 +48,7 @@ RUN sudo apt-get install -y --no-install-recommends \
 RUN sudo apt-get install -y --no-install-recommends \ 
         openjdk-8-jdk
 ENV JDK8_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA8_HOME /usr/lib/jvm/java-8-openjdk-amd64
 # set jdk to jdk 8 for intelij IDEA
 ENV IDEA_JDK /usr/lib/jvm/java-8-openjdk-amd64
 
