@@ -44,6 +44,10 @@ RUN sudo apt-get install -y --no-install-recommends \
 #STOPSIGNAL SIGRTMIN+3
 #CMD [ "/sbin/init" ]
 
+# install jdk8 for inteiJ IDEA
+RUN sudo apt-get install -y --no-install-recommends \ 
+        openjdk-8-jdk
+
 # install inteliJ IDEA ultimate
 RUN set -x && VER="2018.2.6" && REL="182.5107.16" \
         && sudo curl -sL -o /tmp/ideaIU-$VER-no-jdk.tar.gz https://download.jetbrains.com/idea/ideaIU-$VER-no-jdk.tar.gz \
