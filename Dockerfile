@@ -44,7 +44,7 @@ RUN sudo apt-get install -y --no-install-recommends \
 #STOPSIGNAL SIGRTMIN+3
 #CMD [ "/sbin/init" ]
 
-# install jdk8 for inteiJ IDEA
+# install jdk 8
 RUN sudo apt-get install -y --no-install-recommends \ 
         openjdk-8-jdk
 ENV JDK8_HOME /usr/lib/jvm/java-8-openjdk-amd64
