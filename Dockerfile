@@ -30,9 +30,12 @@ CMD ["sudo", "/usr/sbin/sshd", "-D"]
 # browser: firefox, chromium
 RUN sudo apt-get install -y --no-install-recommends \
         firefox \
-        chromium-browser \
-        chromium-codecs-ffmpeg \
-        chromium-codecs-ffmpeg-extra \
+        chromium-browser
+RUN sudo apt-get install -y --no-install-recommends \
+        chromium-codecs-ffmpeg
+RUN sudo apt-get install -y --no-install-recommends \      
+        chromium-codecs-ffmpeg-extra 
+RUN sudo apt-get install -y --no-install-recommends \
         flashplugin-installer
 
 # install snap
