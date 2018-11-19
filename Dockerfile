@@ -29,7 +29,7 @@ CMD ["sudo", "/usr/sbin/sshd", "-D"]
 
 # browser: firefox, chromium
 RUN sudo apt-get install -y --no-install-recommends \
-        firefox 
+        firefox \
         chromium-browser \
         chromium-codecs-ffmpeg \
         chromium-codecs-ffmpeg-extra \
