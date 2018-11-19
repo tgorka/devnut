@@ -47,6 +47,7 @@ RUN sudo apt-get install -y --no-install-recommends \
 # install jdk8 for inteiJ IDEA
 RUN sudo apt-get install -y --no-install-recommends \ 
         openjdk-8-jdk
+ENV JDK8_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # install inteliJ IDEA ultimate
 RUN set -x && VER="2018.2.6" && REL="182.5107.16" \
@@ -55,3 +56,5 @@ RUN set -x && VER="2018.2.6" && REL="182.5107.16" \
         && sudo rm -rf /tmp/ideaIU-$VER-no-jdk.tar.gz \
         && echo `alias idea="/opt/idea-IU-$REL/bin/idea.sh"` | sudo tee /etc/profile.d/alias_idea.sh \
         && unset VER && unset REL
+        
+# set jdk to jdk 8 for intelij IDEA
