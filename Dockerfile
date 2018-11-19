@@ -47,9 +47,11 @@ RUN sudo apt-get install -y --no-install-recommends \
 #STOPSIGNAL SIGRTMIN+3
 #CMD [ "/sbin/init" ]
 
-# install jdk 8
+# install jdk 8, libsecret, keyring for InteliJ IDEA Ultimate to run (and store license)
 RUN sudo apt-get install -y --no-install-recommends \ 
-        openjdk-8-jdk
+        openjdk-8-jdk \
+        libsecret-1-0 \
+        gnome-keyring
 ENV JDK8_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV JAVA8_HOME /usr/lib/jvm/java-8-openjdk-amd64
 # set jdk to jdk 8 for intelij IDEA
