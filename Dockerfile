@@ -58,7 +58,7 @@ ENV JAVA8_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV IDEA_JDK /usr/lib/jvm/java-8-openjdk-amd64
 
 # install inteliJ IDEA ultimate
-RUN set -x && VER="2018.2.6" && REL="182.5107.16" \
+RUN set -x && VER="2018.3" && REL="183.4284.148" \
         && sudo curl -sL -o /tmp/ideaIU-$VER-no-jdk.tar.gz https://download.jetbrains.com/idea/ideaIU-$VER-no-jdk.tar.gz \
         && sudo tar -xz -C /opt -f /tmp/ideaIU-$VER-no-jdk.tar.gz \
         && sudo rm -rf /tmp/ideaIU-$VER-no-jdk.tar.gz \
