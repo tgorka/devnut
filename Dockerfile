@@ -11,6 +11,9 @@ RUN sudo apt-get update
 # install vim
 RUN sudo apt-get install -y --no-install-recommends \
         vim
+        
+# install oh my zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # ssh server
 RUN sudo apt-get install -y --no-install-recommends openssh-server
