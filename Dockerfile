@@ -17,7 +17,6 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/too
 RUN sudo apt-get install -y --no-install-recommends \
         fonts-powerline
 ENV ZSH_THEME "agnoster"
-RUN chsh -s $(which zsh)
 
 # ssh server
 RUN sudo apt-get install -y --no-install-recommends openssh-server
