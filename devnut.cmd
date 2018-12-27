@@ -1,20 +1,25 @@
 @echo off&setlocal ENABLEEXTENSIONS
-
+ 
 REM change directory if needed
 REM C:
-REM chdir %HOMEPATH%\devnut
+chdir %HOMEPATH%
 
-REM run docker compose
-REM docker-compose up
+REM set variables
+SET NAME=devnut
+SET PROVIDER_PATH=%cd%
+SET CMD=zsh --login
+SET CPU=3.0
+SET MEM=4g
 
-REM Create local volume before running the container
-REM docker volume create --name devnut --driver local
+REM docker volume create --name %NAME% --driver local
 
 REM run docker with idea open
 docker run -i -t --rm --privileged ^
-       --memory 4g ^
-       --cpus 3.0 ^
-       --mount type=volume,src=devnut,dst=/home/dev ^
-       --name devnut ^
+       --hostname nut ^
+       --memory %MEM% ^
+       --cpus %CPU% ^
+       --mount type=volume,src=%NAME%,dst=/home/dev ^
+       --volume %PROVIDER_PATH%:/mnt/host ^
+       --name %NAME% ^
        tgorka/devnut ^
-       zsh
+       %CMD%
