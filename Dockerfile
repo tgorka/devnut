@@ -5,6 +5,12 @@ ENV DOCKER_SUBNAME dev
 # default display host set for the docker host network
 ENV DISPLAY host.docker.internal:0.0
 
+# set user
+RUN sudo useradd -r --create-home -u 998 -g nut dev
+RUN sudo usermod -aG sudo dev
+USER dev
+WORKDIR /home/dev
+
 # update package list
 RUN sudo apt-get update
 
