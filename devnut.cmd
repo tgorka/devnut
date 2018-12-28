@@ -1,5 +1,14 @@
 @echo off&setlocal ENABLEEXTENSIONS
 
+REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+REM %% CMD line docker runner                    %%
+REM %% for Windows systems                       %%
+REM %% Author: Tomasz Gorka                      %%
+REM %% <tomasz+devnut[at]gorka.org.pl>           %%
+REM %% License: MIT 2019                         %%
+REM %% Website: https://github.com/tgorka/devnut %%
+REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 REM change directory for binding into the docker /mnt/host
 chdir %HOMEPATH%
 
