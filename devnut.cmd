@@ -23,6 +23,9 @@ SET CPU=3.0
 SET MEM=4g
 SET TEMPLATE_VOLUME=devnut
 SET CHECK_UPDATES="1"
+REM SET DOCKER_HOST=tcp://localhost:2376
+REM SET DOCKER_CERT_PATH=%cd%\.docker\certs\path
+REM SET DOCKER_TLS_VERIFY=1
 REM %%%%%%%%%%%%%%%%%%%%%%%%
 REM %%%%% END CUSTOMIZE %%%%
 REM %%%%%%%%%%%%%%%%%%%%%%%%
