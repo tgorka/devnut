@@ -20,12 +20,22 @@ REM %%%%%%%%%%%%%%%%%%%%%%%%
 REM another variables
 SET USER_NAME=dev
 SET VOLUME_EXIST="0"
+SET CONTAINER_EXIST="0"
 SET COPY_FROM_TEMPLATE="0"
 
-REM make sure to have latest image
-IF %CHECK_UPDATES% == "1" docker pull tgorka/devnut
+IF %CHECK_UPDATES% == "1" (
+       REM make sure to have latest image
+       docker pull tgorka/devnut
+)
 
-REM create new volume if not exists and copy from the template
+REM exiting running container of "%NAME%" if exist
+FOR /F "tokens=*" %%V IN ('docker container ls --format={{.Names}}') DO IF %NAME%==%%V SET CONTAINER_EXIST="1"
+IF %CONTAINER_EXIST% == "1" (
+       ECHO Container "%NAME%" is running. Killing.
+       docker container kill "%NAME%"
+)
+
+REM create new volume of "%NAME%" if not exists and copy from the template
 FOR /F "tokens=2" %%V IN ('docker volume ls') DO IF %NAME%==%%V SET VOLUME_EXIST="1"
 IF %VOLUME_EXIST% == "0" (
        ECHO Volume "%NAME%" does not exist. Creating one.
